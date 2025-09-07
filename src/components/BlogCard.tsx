@@ -27,7 +27,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
       {post.picture?.filename_disk && (
         <div className="aspect-video overflow-hidden rounded-t-lg">
           <img
-            src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/pictures/${post.picture.filename_disk}`}
+            src={`${import.meta.env.VITE_SUPABASE_URL || import.meta.env.VITE_SUPABASE_DATABASE_URL || import.meta.env.VITE_PUBLIC_SUPABASE_URL }/storage/v1/object/public/pictures/${post.picture.filename_disk}`}
             alt={post.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
